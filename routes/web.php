@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PostController@indexAll')->name('posts.all');
+
+Route::resource('posts', 'PostController');
+
+
 
 Auth::routes();
 
